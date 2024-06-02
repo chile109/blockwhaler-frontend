@@ -1,29 +1,85 @@
-This is a [RainbowKit](https://rainbowkit.com) + [wagmi](https://wagmi.sh) + [Next.js](https://nextjs.org/) project bootstrapped with [`create-rainbowkit`](/packages/create-rainbowkit).
+# BlockWhaler Next Project
 
-## Getting Started
+<img src="https://github.com/chile109/blockwhaler-frontend/assets/13402112/66b876b5-4af0-47ba-b8c6-08b62e2e2c46" alt="BlockWhaler" width="300" height="300">
 
-First, run the development server:
 
-```bash
-npm run dev
-```
+Welcome to the BlockWhaler Next Project repository! This project builds upon the foundation of BlockWhaler, incorporating new features and enhancements to deliver an even more engaging web3 gaming experience.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Table of Contents
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technology Stack](#technology-stack)
+- [License](#license)
+- [Contact](#contact)
 
-## Learn More
+## Introduction
 
-To learn more about this stack, take a look at the following resources:
+BlockWhaler Next Project aims to revolutionize web3 gaming by introducing new gameplay modes, enhanced NFT customization, and expanded blockchain support. Players will embark on exciting whaling adventures, capturing TBA sharks equipped with unique NFT gear, while enjoying a fair and transparent gaming experience powered by Chainlink VRF.
 
-- [RainbowKit Documentation](https://rainbowkit.com) - Learn how to customize your wallet connection flow.
-- [wagmi Documentation](https://wagmi.sh) - Learn how to interact with Ethereum.
-- [Next.js Documentation](https://nextjs.org/docs) - Learn how to build a Next.js application.
+- Unity repo: https://github.com/chile109/blockwhaler-unity
+- Contract repo: https://github.com/Aronyu127/BlockWhaler
+- BlockWhaler Contract: `0xf2DD83CFB97f1f52D2f83B560046cb616E885Adc`
 
-You can check out [the RainbowKit GitHub repository](https://github.com/rainbow-me/rainbowkit) - your feedback and contributions are welcome!
+## Features
 
-## Deploy on Vercel
+- **New Gameplay Modes**: Introducing cooperative missions and exploration quests.
+- **Enhanced NFT Customization**: More NFT equipment options for sharks, allowing for greater personalization.
+- **Dynamic Prize Pools**: Sharks' prize pools grow with each unsuccessful capture attempt.
+- **Mobile Support**: Play BlockWhaler on your mobile devices.
+- **Multi-Chain Support**: Integration with multiple blockchain ecosystems.
+- **Fair and Transparent Gameplay**: Powered by Chainlink VRF for verifiable randomness.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Installation
 
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To run BlockWhaler Next Project locally, follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/chile109/blockwhaler-frontend.git
+   cd blockwhaler-next-project
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm start
+   ```
+
+## Usage
+
+1. **Launch the game:**
+   Open your browser and navigate to `http://localhost:3000`.
+
+2. **Connect your wallet:**
+   Ensure you have a web3 wallet installed (e.g., MetaMask) and connect it to the game.
+
+3. **Acquire LINK tokens:**
+   Ensure you have enough LINK tokens in your wallet and approve transfer LINK in to participate in the game.
+   Faucet: https://faucets.chain.link/
+   LINK: https://sepolia.etherscan.io/address/0x779877A7B0D9E8603169DdbD7836e478b4624789
+
+5. **Start playing:**
+   Launch rockets to capture TBA sharks, collect NFT equipment, and increase your prize pool.
+
+## Technology Stack
+
+- **Frontend**: React, Unity
+- **Smart Contracts**: Solidity, Remix
+- **Blockchain**: Ethereum, Chainlink VRF
+- **Storage**: IPFS for decentralized storage of NFTs
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any questions or suggestions, feel free to reach out to us:
+- **Discord**: [Mustaverse Community](https://discord.gg/blockwhaler](https://discord.gg/dcNFYxY6))
