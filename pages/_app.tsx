@@ -1,10 +1,11 @@
-import '../styles/globals.css';
-import '@rainbow-me/rainbowkit/styles.css';
-import type { AppProps } from 'next/app';
+import "../styles/globals.css";
+import "@rainbow-me/rainbowkit/styles.css";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import type { AppProps } from "next/app";
 import { Unity, useUnityContext } from "react-unity-webgl";
 import React, { useState, useEffect, useCallback } from "react";
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { WagmiProvider } from 'wagmi';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { WagmiProvider } from "wagmi";
 import {
   arbitrum,
   base,
@@ -12,20 +13,18 @@ import {
   optimism,
   polygon,
   sepolia,
-} from 'wagmi/chains';
-import { getDefaultConfig, RainbowKitProvider } from '@rainbow-me/rainbowkit';
+} from "wagmi/chains";
+import { getDefaultConfig, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { abi } from "../abi/abi";
+import { MintNFT } from '../components/mint-nft'
 
 const config = getDefaultConfig({
-  appName: 'RainbowKit App',
-  projectId: 'YOUR_PROJECT_ID',
+  appName: "BlockWhaler App",
+  projectId: "20240602",
   chains: [
     sepolia,
     mainnet,
-    polygon,
-    optimism,
-    arbitrum,
-    base,
-    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === 'true' ? [sepolia] : []),
+    ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true" ? [sepolia] : []),
   ],
   ssr: true,
 });
@@ -33,48 +32,44 @@ const config = getDefaultConfig({
 const client = new QueryClient();
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const { unityProvider, sendMessage, addEventListener, removeEventListener } = useUnityContext({
-    loaderUrl: "UnityBuild/webgl_app.loader.js",
-    dataUrl: "UnityBuild/webgl_app.data",
-    frameworkUrl: "UnityBuild/webgl_app.framework.js",
-    codeUrl: "UnityBuild/webgl_app.wasm",
-  });
+  const { unityProvider, sendMessage, addEventListener, removeEventListener } =
+    useUnityContext({
+      loaderUrl: "UnityBuild/webgl_app.loader.js",
+      dataUrl: "UnityBuild/webgl_app.data",
+      frameworkUrl: "UnityBuild/webgl_app.framework.js",
+      codeUrl: "UnityBuild/webgl_app.wasm",
+    });
 
-  const [direction, setDirection] = useState("");
-  const [xpos, setXpos] = useState(0);
-  const [ypos, setYpos] = useState(0);
-
-  const handleMove = useCallback((direction:any ,xpos:any, ypos:any) => {
-    setDirection(direction);
-    setXpos(xpos);
-    setYpos(ypos);
-  }, []);
-
+  const handleShot = useCallback(
+    () => {
+      console.log("Shot");
+    },
+    [sendMessage]
+  );
+  
   useEffect(() => {
-    addEventListener("MoveCallback", handleMove);
+    addEventListener("MoveCallback", handleShot);
     return () => {
-      removeEventListener("MoveCallback", handleMove);
+      removeEventListener("MoveCallback", handleShot);
     };
-  }, [addEventListener, removeEventListener, handleMove]);
-
-  function moveLeft() {
-    sendMessage("Sphere", "MoveLeft", 10);
-  }
+  }, [addEventListener, removeEventListener, handleShot]);
 
   return (
     <WagmiProvider config={config}>
-      <Unity unityProvider = {unityProvider} 
-      style={{
-        height: "100%",
-        width: 1000,
-        border: "2px solid black",
-        background: "grey",
-      }}/>
-      <button onClick={moveLeft}>Move Left</button>
-      {<p>{`Moved! ${direction} x = ${xpos} y = ${ypos} `}</p>}
       <QueryClientProvider client={client}>
         <RainbowKitProvider>
+          <ConnectButton />
+          <MintNFT />
           <Component {...pageProps} />
+          <Unity
+            unityProvider={unityProvider}
+            style={{
+              height: "100%",
+              width: 1000,
+              border: "2px solid black",
+              background: "grey",
+            }}
+          />
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
