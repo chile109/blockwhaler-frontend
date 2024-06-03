@@ -25,11 +25,9 @@ BlockWhaler Next Project aims to revolutionize web3 gaming by introducing new ga
 
 ## Features
 
-- **New Gameplay Modes**: Introducing cooperative missions and exploration quests.
+- **New Gameplay Modes**: Whaling Shark NFT to get the rare cool equipment NFT and bonus prize.
 - **Enhanced NFT Customization**: More NFT equipment options for sharks, allowing for greater personalization.
 - **Dynamic Prize Pools**: Sharks' prize pools grow with each unsuccessful capture attempt.
-- **Mobile Support**: Play BlockWhaler on your mobile devices.
-- **Multi-Chain Support**: Integration with multiple blockchain ecosystems.
 - **Fair and Transparent Gameplay**: Powered by Chainlink VRF for verifiable randomness.
 
 ## Installation
@@ -66,7 +64,8 @@ To run BlockWhaler Next Project locally, follow these steps:
    LINK: https://sepolia.etherscan.io/address/0x779877A7B0D9E8603169DdbD7836e478b4624789
 
 5. **Start playing:**
-   Launch rockets to capture TBA sharks, collect NFT equipment, and increase your prize pool.
+   Click shoot launch rockets with 10 LINK to capture TBA sharks, collect NFT equipment, and increase your prize pool.
+   The shark prize will growing until it be shot down. Good luck!
 
 ## Technology Stack
 
